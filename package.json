@@ -1,0 +1,24 @@
+{
+  "name": "getinlinecadet",
+  "version": "1.0.0",
+  "description": "a simple web app to use in class",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bin/start"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "express": "~4.16.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soraiavmv/getinlinecadet.git"
+  },
+  "author": "Soraia Veríssimo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soraiavmv/getinlinecadet/issues"
+  }
+}
