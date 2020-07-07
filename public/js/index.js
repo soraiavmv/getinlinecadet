@@ -25,7 +25,7 @@ const doLogin = async (data) => {
   try {
     await $.ajax({
       type: "POST",
-      url: "/api/logif/",
+      url: "/api/login/",
       data: data,
       dataType: "JSON"
     });
