@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const loginModel = require("../js/models/login-model");
+const crypto = require("crypto-js");
 
-router.get("/", async (req, res) =>{
-    let username = req.params.username;
-    let password = req.params.password;
-    let result = await loginModel.getUser(username, password);
-    res.send(result);
+router.post("/", async (req, res) => {
+
+  let password = crypto.MD5(req.body.password).toString();
+  let username = req.body.username;
+  
+  let result = await loginModel.getUser(username, password);
+  res.send(result);
 });
 
 module.exports = router;
