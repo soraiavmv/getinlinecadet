@@ -1,20 +1,21 @@
 {
   "name": "getinlinecadet",
   "version": "1.0.0",
-  "description": "a simple web app to use in class",
-  "main": "index.js",
-  "scripts": {
-    "start": "node bin/start"
-  },
+  "description": "a simple webapp",
+  "main": "app.js",
   "dependencies": {
     "crypto-js": "^4.0.0",
-    "express": "~4.16.1",
+    "express": "^4.17.1",
     "express-jwt": "^6.0.0",
     "express-jwt-authz": "^2.4.0",
     "jwks-rsa": "^1.8.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "pug": "^3.0.0"
   },
   "devDependencies": {},
+  "scripts": {
+    "start": "node ./bin/start.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/soraiavmv/getinlinecadet.git"
