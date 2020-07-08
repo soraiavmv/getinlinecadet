@@ -16,10 +16,11 @@ input{
     font-size: 22px;
     border: steelblue;
     border-style: outset;
+    background-color: white;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-}
+ }
 
 #title {
     font-family: 'Montserrat Subrayada', sans-serif;
@@ -43,4 +44,30 @@ input{
     font-weight: bolder;
     text-align: center;
     
+}
+
+.custom-shape-divider-top-1594210949 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: -1;
+}
+
+.custom-shape-divider-top-1594210949 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 276px;
+    z-index: -1;
+
+}
+
+.custom-shape-divider-top-1594210949 .shape-fill {
+    fill: slategray;
+    z-index: -1;
+
 }
