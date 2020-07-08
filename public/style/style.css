@@ -1,6 +1,46 @@
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
+    text-align: center;
+}
+
+input{
+    width: 90%;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#loginForm {
+    display: inline-block;
+    margin-top: 10%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    border: steelblue;
+    border-style: outset;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+#title {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-size: 40px;
+}
+
+#paragraphs {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+#loginBtn {
+    width: 50%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    background-color: slategray;
+    border-style: outset;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    
 }

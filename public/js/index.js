@@ -7,6 +7,7 @@ $(document).ready(() => {
 const changeForm = (isLoginMode) => {
   let mode = isLoginMode ? "hidden" : "password";
   $("#psw2Break")[0].hidden = isLoginMode;
+  $("#psw2Break2")[0].hidden = isLoginMode;
   $("#psw2Label")[0].hidden = isLoginMode;
   $("#psw2")[0].type = mode;
   $("#registerParagraph")[0].hidden = !isLoginMode;
