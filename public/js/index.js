@@ -62,8 +62,16 @@ const doRegister = async (data) => {
     dataType: "JSON",
   });
 
+  if (result.sql) {
+    clearForm("The username you selected already exists. Please try again.");
+    return;
+  }
+
   changeForm(true);
-  clearForm("Great! Now go ahead and use your new credentials to start asking for help!", true);
+  clearForm(
+    "Great! Now go ahead and use your new credentials to start asking for help!",
+    true
+  );
 };
 
 const checkPasswordEquality = (data) => {
@@ -72,8 +80,8 @@ const checkPasswordEquality = (data) => {
 };
 
 const clearForm = (message, success) => {
-  if(success){
-    $("#error")[0].style.color = "yellowgreen"; 
+  if (success) {
+    $("#error")[0].style.color = "yellowgreen";
   }
   $("#error")[0].innerText = message;
   $(":input", "#loginForm").val("");
