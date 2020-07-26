@@ -37,9 +37,7 @@ const doLogin = async (data) => {
     });
 
     if (Object.keys(result).length === 0) {
-      $("#error")[0].innerText =
-        "Forgot your credentials? Talk to your favorite <MC>!";
-      $(":input", "#loginForm").val("");
+      clearForm("Forgot your credentials? Talk to your favorite <MC>!");
       return;
     }
 
@@ -50,14 +48,33 @@ const doLogin = async (data) => {
 };
 
 const doRegister = async (data) => {
-  checkPassword(data);
+  if (!checkPasswordEquality(data)) {
+    clearForm("Fields related to 'password' must have matching values!");
+    return;
+  }
+
+  const { username, password } = data;
 
   let result = await $.ajax({
     type: "POST",
     url: "/api/register/",
-    data: Object.assign({}, username, password),
+    data: Object.assign({}, { username, password }),
     dataType: "JSON",
   });
+
+  changeForm(true);
+  clearForm("Great! Now go ahead and use your new credentials to start asking for help!", true);
 };
 
-const checkPassword = function (data) {};
+const checkPasswordEquality = (data) => {
+  const { password, password2 } = data;
+  return password === password2;
+};
+
+const clearForm = (message, success) => {
+  if(success){
+    $("#error")[0].style.color = "yellowgreen"; 
+  }
+  $("#error")[0].innerText = message;
+  $(":input", "#loginForm").val("");
+};
