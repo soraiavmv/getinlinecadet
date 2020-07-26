@@ -1,0 +1,9 @@
+#error {
+    margin-top: 12%;
+    border: steelblue;
+    border-style: outset;
+}
+
+#error-img {
+    height: 200px;
+}

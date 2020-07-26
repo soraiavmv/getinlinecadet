@@ -4,33 +4,60 @@ $(document).ready(() => {
   $("#loginBtn").click(() => getFormInfo());
 });
 
-const changeForm = (isLoginMode) => {
-  let mode = isLoginMode ? "hidden" : "password";
-  $("#psw2Break")[0].hidden = isLoginMode;
-  $("#psw2Break2")[0].hidden = isLoginMode;
-  $("#psw2Label")[0].hidden = isLoginMode;
+const changeForm = (loginMode) => {
+  let mode = loginMode ? "hidden" : "password";
+  $("#psw2Break")[0].hidden = loginMode;
+  $("#psw2Break2")[0].hidden = loginMode;
+  $("#psw2Label")[0].hidden = loginMode;
   $("#psw2")[0].type = mode;
-  $("#registerParagraph")[0].hidden = !isLoginMode;
-  $("#loginParagraph")[0].hidden = isLoginMode;
+  $("#registerParagraph")[0].hidden = !loginMode;
+  $("#loginParagraph")[0].hidden = loginMode;
 };
 
 const getFormInfo = () => {
   let userData = {
     username: $("#username").val(),
     password: $("#psw").val(),
+    password2: $("#psw2").val(),
   };
-  doLogin(userData);
+
+  $("#psw2")[0].type === "hidden" ? doLogin(userData) : doRegister(userData);
 };
 
 const doLogin = async (data) => {
+  const { username, password } = data;
+  let newObj = Object.assign({}, { username, password });
+
   try {
-    await $.ajax({
+    let result = await $.ajax({
       type: "POST",
       url: "/api/login/",
-      data: data,
-      dataType: "JSON"
+      data: newObj,
+      dataType: "JSON",
     });
+
+    if (Object.keys(result).length === 0) {
+      $("#error")[0].innerText =
+        "Forgot your credentials? Talk to your favorite <MC>!";
+      $(":input", "#loginForm").val("");
+      return;
+    }
+
+    window.location.href = "/inline";
   } catch (err) {
-    window.location.href = "/error"
+    window.location.href = "/error";
   }
 };
+
+const doRegister = async (data) => {
+  checkPassword(data);
+
+  let result = await $.ajax({
+    type: "POST",
+    url: "/api/register/",
+    data: Object.assign({}, username, password),
+    dataType: "JSON",
+  });
+};
+
+const checkPassword = function (data) {};

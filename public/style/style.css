@@ -43,9 +43,15 @@ input{
     color: white;
     font-weight: bolder;
     text-align: center;
-    
 }
 
+#error {
+    font-family: 'Montserrat', sans-serif;
+    color: crimson;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 20px;
+}
 .custom-shape-divider-top-1594210949 {
     position: absolute;
     top: 0;

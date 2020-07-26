@@ -5,7 +5,7 @@ module.exports.getUser = async (username, password) => {
     const sqlStatement = "SELECT * FROM users WHERE username=?";
     const user = await pool.query(sqlStatement, [username]);
 
-    if (user[0].password === password) {
+    if (Object.keys(user).length !== 0 && user[0].password === password) {
       return user;
     }
 

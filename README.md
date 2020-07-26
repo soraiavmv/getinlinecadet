@@ -7,4 +7,4 @@ TOOLS:
     FE - JavaScript (jQuery), HTML, CSS
     BE - JavaScript (Express, CryptoJS, mySQL)
 
-![login snapshot](public/resources/icon.png)
+![login snapshot](public/resources/login.png)
