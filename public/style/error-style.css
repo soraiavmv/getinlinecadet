@@ -1,7 +1,15 @@
-#error {
+body {
+    text-align: center;
+}
+
+#error-div {
     margin-top: 12%;
     border: steelblue;
     border-style: outset;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    margin-top: 12%;
+    background-color: white;
 }
 
 #error-img {
