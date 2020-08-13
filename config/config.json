@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "soraia",
+    "password": "",
+    "database": "getinline",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

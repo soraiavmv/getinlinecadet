@@ -1,7 +1,7 @@
 {
   "name": "getinlinecadet",
   "version": "1.0.0",
-  "description": "a simple webapp",
+  "description": "a simple webapp to allow students to ask for help from a teacher",
   "main": "app.js",
   "dependencies": {
     "crypto-js": "^4.0.0",
@@ -10,8 +10,11 @@
     "express-jwt-authz": "^2.4.0",
     "jsrsasign": "^8.0.20",
     "jwks-rsa": "^1.8.1",
-    "mysql": "^2.18.1",
-    "pug": "^3.0.0"
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "pug": "^3.0.0",
+    "sequelize": "^6.3.4",
+    "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {},
   "scripts": {

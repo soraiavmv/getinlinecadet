@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const registerModel = require("../models/register-model");
+const registerModel = require("../services/user-service");
 const crypto = require("crypto-js");
 
 router.post("/", async (req, res) => {
