@@ -1,0 +1,25 @@
+button {
+    width: 99%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#question{
+    display: inline-block;
+    margin-top: 12%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    border: steelblue;
+    border-style: outset;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+#line {
+    width: 80%;
+    height: 200px;
+    background-color: slategray;
+    display: flex;
+    transform: translate(12.5%, 50%);
+}
