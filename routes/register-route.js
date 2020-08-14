@@ -6,9 +6,15 @@ const crypto = require("crypto-js");
 router.post("/", async (req, res) => {
   let password = crypto.MD5(req.body.password).toString();
   let username = req.body.username;
-  let result = await registerModel.createUser(username, password);
+  try {
+    let result = await registerModel.createUser(username, password);
+    res.send(result);
+  } catch (error) {
+    if(error.errors[0].type === "unique violation"){
+      res.send(null);
+    }
+  }
 
-  res.send(result);
 });
 
 module.exports = router;

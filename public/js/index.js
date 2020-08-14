@@ -55,23 +55,23 @@ const doRegister = async (data) => {
 
   const { username, password } = data;
 
-  let result = await $.ajax({
-    type: "POST",
-    url: "/api/register/",
-    data: Object.assign({}, { username, password }),
-    dataType: "JSON",
-  });
+  try {
+    let result = await $.ajax({
+      type: "POST",
+      url: "/api/register/",
+      data: Object.assign({}, { username, password }),
+      dataType: "JSON",
+    });
 
-  if (result.sql) {
+    changeForm(true);
+    clearForm(
+      "Great! Now go ahead and use your new credentials to start asking for help!",
+      true
+    );
+
+  } catch (error) {
     clearForm("The username you selected already exists. Please try again.");
-    return;
   }
-
-  changeForm(true);
-  clearForm(
-    "Great! Now go ahead and use your new credentials to start asking for help!",
-    true
-  );
 };
 
 const checkPasswordEquality = (data) => {
