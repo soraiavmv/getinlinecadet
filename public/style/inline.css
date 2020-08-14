@@ -3,6 +3,17 @@ button {
     font-family: 'Montserrat', sans-serif;
 }
 
+#line > div {
+    width: 7%;
+    height: 120px;
+    display: flex;
+    border: white;
+    border-style: outset;
+    background-color: rgb(69, 79, 90);
+    transform: translate(2%, 30%);
+
+}
+
 #question{
     display: inline-block;
     margin-top: 12%;
