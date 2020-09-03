@@ -12,11 +12,12 @@ module.exports.getByUsername = async (username) => {
 
 module.exports.authenticate  = async (username, password) => {
   const result = await this.getByUsername(username);
-  console.log(result);
+
   if (Object.keys(result).length !== 0 && result.password === password) {
     return result;
   }
-  throw new Error("Something wrong with those credentials");
+  
+  throw new Error("Auth failed");
 }
 
 module.exports.createUser = async (username, password) => {

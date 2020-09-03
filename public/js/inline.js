@@ -4,8 +4,14 @@ $(document).ready(() => {
 
 
 const setButton = () => {
-    $("#name").text("Human");
+    let counter = 0;
+
+    $("#name").text(sessionStorage.getItem("username"));
     $("#lineBtn").click(() => {
-        $("#line").append("<div></div>")
+        const id = "cadet" + (++counter);
+        $("#line").append("<div id="+id+"></div>");
+        $("#"+id).click(() => {
+            $("#"+id).remove()
+        });
     });
 }

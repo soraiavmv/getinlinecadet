@@ -41,6 +41,8 @@ const doLogin = async (data) => {
       return;
     }
 
+    sessionStorage.setItem("token", result.token);
+    sessionStorage.setItem("username", username);
     window.location.href = "/inline";
   } catch (err) {
     window.location.href = "/error";
@@ -68,7 +70,6 @@ const doRegister = async (data) => {
       "Great! Now go ahead and use your new credentials to start asking for help!",
       true
     );
-
   } catch (error) {
     clearForm("The username you selected already exists. Please try again.");
   }

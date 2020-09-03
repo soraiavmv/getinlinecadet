@@ -1,11 +1,11 @@
 const express = require("express");
 var path = require('path');
 
-const indexRouter = require("./routes/index-route");
-const errorRouter = require("./routes/error-route");
-const loginRouter = require("./routes/login-route");
-const registerRouter = require("./routes/register-route");
-const inlineRouter = require("./routes/inline-route");
+const indexRouter = require("./api/routes/index-route");
+const errorRouter = require("./api/routes/error-route");
+const loginRouter = require("./api/routes/login-route");
+const registerRouter = require("./api/routes/register-route");
+const inlineRouter = require("./api/routes/inline-route");
 const app = express();
 
 app.use(express.json());
